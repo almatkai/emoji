@@ -1,0 +1,155 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "emoji",
+  "title": "Emoji Search",
+  "description": "Finds emojis and inserts or copies them.",
+  "icon": "command-icon.png",
+  "author": "almatkai",
+  "contributors": [
+    "sxn",
+    "maxdavid",
+    "sinasab",
+    "pernielsentikaer"
+  ],
+  "license": "MIT",
+  "categories": [
+    "System",
+    "Media"
+  ],
+  "commands": [
+    {
+      "name": "emoji",
+      "title": "Search Emoji",
+      "description": "Finds emojis and inserts or copies them.",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "primaryAction",
+      "type": "dropdown",
+      "required": false,
+      "title": "Primary action",
+      "description": "Primary action to use",
+      "default": "paste",
+      "data": [
+        {
+          "title": "Paste to Active App",
+          "value": "paste"
+        },
+        {
+          "title": "Copy to Clipboard",
+          "value": "copy"
+        }
+      ]
+    },
+    {
+      "name": "unicodeVersion",
+      "type": "dropdown",
+      "required": false,
+      "title": "Unicode Version",
+      "description": "Unicode version to use (default: 15.1)",
+      "default": "15.1",
+      "data": [
+        {
+          "title": "15.1",
+          "value": "15.1"
+        },
+        {
+          "title": "15.0",
+          "value": "15.0"
+        },
+        {
+          "title": "14.0",
+          "value": "14.0"
+        },
+        {
+          "title": "13.1",
+          "value": "13.1"
+        },
+        {
+          "title": "13.0",
+          "value": "13.0"
+        },
+        {
+          "title": "12.1",
+          "value": "12.1"
+        },
+        {
+          "title": "12.0",
+          "value": "12.0"
+        },
+        {
+          "title": "11.0",
+          "value": "11.0"
+        },
+        {
+          "title": "5.0",
+          "value": "5.0"
+        },
+        {
+          "title": "4.0",
+          "value": "4.0"
+        }
+      ]
+    },
+    {
+      "name": "shortCodes",
+      "type": "checkbox",
+      "required": false,
+      "title": "Shortcodes",
+      "label": "Add Shortcodes",
+      "default": false,
+      "description": "Add short codes to the emojis (e.g. zap for ⚡️) which can be used in platforms like GitHub and Slack."
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.1",
+    "cross-fetch": "^3.1.5",
+    "emojilib": "^3.0.12",
+    "fuse.js": "^6.5.3",
+    "raycast-toolkit": "^1.0.3",
+    "@raycast/utils": "^2.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsx": "^4.22.4",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "overrides": {
+    "brace-expansion": "5.0.9",
+    "js-yaml@3": "3.15.1",
+    "fast-uri": "3.1.5"
+  },
+  "id": "com.tezbar.emoji",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "version": "0.1.0",
+  "tezbar": {
+    "schemaVersion": 1,
+    "platforms": [
+      "macos",
+      "windows"
+    ],
+    "linuxStatus": "coming-soon",
+    "repository": "https://github.com/almatkai/emoji",
+    "upstream": {
+      "repository": "https://github.com/raycast/extensions",
+      "path": "extensions/emoji",
+      "commit": "6734d85992290066fd31a7f5bee3cca3d3545a1a"
+    }
+  }
+}
