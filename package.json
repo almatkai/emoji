@@ -109,21 +109,23 @@
   ],
   "dependencies": {
     "@raycast/api": "^1.104.1",
+    "@raycast/utils": "^2.2.2",
     "cross-fetch": "^3.1.5",
     "emojilib": "^3.0.12",
     "fuse.js": "^6.5.3",
-    "raycast-toolkit": "^1.0.3",
-    "@raycast/utils": "^2.2.2"
+    "raycast-toolkit": "^1.0.3"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "esbuild": "^0.28.2",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "build": "ray build -e dist",
+    "build": "node scripts/build.mjs",
+    "build:raycast": "ray build -e dist",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test test/*.test.ts"
   },
@@ -137,7 +139,7 @@
     "macOS",
     "Windows"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "tezbar": {
     "schemaVersion": 1,
     "platforms": [
